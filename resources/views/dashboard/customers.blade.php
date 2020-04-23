@@ -1,26 +1,46 @@
 @extends('layout')
 
+@section('title', 'Customers List')
+
+
 @section('content')
-    <h1>Customers</h1>
+<div class="row">
+    <div class="col-12">
+        <h1>Customer List</h1>
+    </div>
+</div>
 
-    <form action="customers" method="POST" class="pb-5">
-        <div class="input-group">
-            <input type="text" name="name" value="{{ old('name') }}">
-            <p class="text-warning">{{ $errors->first('name') }}</p>
-        </div>
-        <div class="input-group">
-            <input type="text" name="email" value="{{ old('email') }}">
-            <p class="text-warning">{{ $errors->first('email') }}</p>
-        </div>
-        <button type="submit">Add Customer</button>
+<div class="row">
+    <div class="col-12">
+        <form action="customers" method="POST">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" name="name" value="{{ old('name') }}" class="form-control">
+                <p class="text-warning">{{ $errors->first('name') }}</p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="text" name="email" value="{{ old('email') }}" class="form-control">
+                <p class="text-warning">{{ $errors->first('email') }}</p>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Customer</button>
 
-         @csrf
-    </form>
+             @csrf
+        </form>
+    </div>
+</div>
 
-    <ul>
-        @foreach ($customers as $customer)
-            <li>{{ $customer->name }} <span class="text-muted">({{ $customer->email }})</span></li>
-        @endforeach
-    </ul>
+
+<div class="row">
+    <div class="col-12">
+        <ul>
+            @foreach ($customers as $customer)
+                <li>{{ $customer->name }} <span class="text-muted">({{ $customer->email }})</span></li>
+            @endforeach
+        </ul>
+    </div>
+</div>
+
+
 @endsection
 
