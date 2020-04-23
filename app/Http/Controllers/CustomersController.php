@@ -8,14 +8,18 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
-    public function list()
+    public function index()
     {
-        $activeCustomers = Customer::active()->get();
-        $inactiveCustomers = Customer::inactive()->get();
+        $customers = Customer::all();
 
+        return view('customers.index', compact('customers'));
+    }
+
+    public function create()
+    {
         $companies = Company::all();
 
-        return view('dashboard.customers', compact('activeCustomers', 'inactiveCustomers', 'companies'));
+        return view('customers.create', compact('companies'));
     }
 
     public function store()
