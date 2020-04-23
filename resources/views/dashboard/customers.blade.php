@@ -6,7 +6,9 @@
     <form action="customers" method="POST" class="pb-5">
         <div class="input-group">
             <input type="text" name="name">
-
+            @error('name')
+            <p class="text-warning">{{ $errors->first('name') }}</p>
+            @enderror
             <button type="submit">Add Customer</button>
 
             @csrf
