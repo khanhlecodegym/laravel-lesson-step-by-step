@@ -15,4 +15,6 @@ class CustomersController extends Controller
             'customers' => $customers
         ]);
     }
+
+
 }
