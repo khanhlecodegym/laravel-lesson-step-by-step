@@ -13,14 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
 
-Route::get('contact', function () {
-    return 'Contact CodeGymer';
-});
+Route::view('contact-us', 'contact');
 
-Route::get('about', function () {
-    return 'About CodeGymer';
-});
+Route::view('about', 'about');
