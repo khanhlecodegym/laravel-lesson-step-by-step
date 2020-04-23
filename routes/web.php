@@ -18,3 +18,16 @@ Route::view('/', 'welcome');
 Route::view('contact-us', 'contact');
 
 Route::view('about', 'about');
+
+Route::get('customers', function () {
+
+    $customers = [
+        'Lê Tường Phúc',
+        'Khoa David',
+        'Hoang Victor'
+    ];
+
+    return view('dashboard.customers', [
+        'customers' => $customers
+    ]);
+});
