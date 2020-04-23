@@ -7,6 +7,7 @@
 <div class="row">
     <div class="col-12">
         <h1>Customer Detail for {{ $customer->name }}</h1>
+        <p><a href="/customers/{{ $customer->id }}/edit">Edit</a></p>
     </div>
 </div>
 
