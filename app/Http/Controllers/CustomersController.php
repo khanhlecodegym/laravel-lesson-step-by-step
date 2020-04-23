@@ -34,6 +34,10 @@ class CustomersController extends Controller
         Customer::create($data);
 
         return back();
+    }
 
+    public function show(Customer $customer)
+    {
+        return view('customers.show', compact('customer'));
     }
 }
