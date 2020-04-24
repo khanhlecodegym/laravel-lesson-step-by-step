@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/home', 'home');
-Route::view('contact-us', 'contact');
+Route::view('/', 'home');
+
+Route::get('contact', 'ContactFormController@create');
+Route::post('contact', 'ContactFormController@store');
+
 Route::view('about', 'about');
 
 // Route::get('customers', 'CustomersController@index');
@@ -26,5 +29,6 @@ Route::view('about', 'about');
 // Route::delete('customers/{customer}', 'CustomersController@destroy');
 
 Route::resource('customers', 'CustomersController');
+
 
 
